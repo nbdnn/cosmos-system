@@ -59,4 +59,4 @@ jobs:
           app-name: 'cosmo-system-node-api'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_87BD4FA44D9D45A69D4442465D066893 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ADE45C3DFBE646CE9CB57D380371D195 }}
