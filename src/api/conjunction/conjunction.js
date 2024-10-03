@@ -5,7 +5,7 @@ const conjunctionSchema = new mongoose.Schema({
   primaryNoradId: { type: Number, required: true },
   secondaryName: { type: String, required: true },
   secondaryNoradId: { type: Number, required: true },
-  TCA: { type: Date, required: true },
+  TCA: { type: String, required: true },
   primaryDaysSinceEpoch: { type: Number, required: true },
   secondaryDaysSinceEpoch: { type: Number, required: true },
   missDistance: { type: Number, required: true },
