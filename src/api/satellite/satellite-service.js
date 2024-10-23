@@ -2,8 +2,8 @@ const Satellite = require("./satellite");
 
 const getSatellites = async (req, res) => {
   try {
-    const products = await Satellite.find({});
-    res.status(200).json(products);
+    const satellites = await Satellite.find({});
+    res.status(200).json(satellites);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -12,8 +12,8 @@ const getSatellites = async (req, res) => {
 const getSatellite = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await Satellite.findById(id);
-    res.status(200).json(product);
+    const satellite = await Satellite.findById(id);
+    res.status(200).json(satellite);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -21,8 +21,8 @@ const getSatellite = async (req, res) => {
 
 const postSatellite = async (req, res) => {
   try {
-    const product = await Satellite.create(req.body);
-    res.status(200).json(product);
+    const satellite = await Satellite.create(req.body);
+    res.status(200).json(satellite);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -31,9 +31,9 @@ const postSatellite = async (req, res) => {
 const putSatellite = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await Satellite.findByIdAndUpdate(id, req.body);
+    const satellite = await Satellite.findByIdAndUpdate(id, req.body);
 
-    if (!product) {
+    if (!satellite) {
       return res.status(404).json({ message: "Satellite not found" });
     }
 
@@ -49,9 +49,9 @@ const deleteSatellite = async (req, res) => {
     const { id } = req.params;
     console.log(id);
 
-    const product = await Satellite.findByIdAndDelete(id);
+    const satellite = await Satellite.findByIdAndDelete(id);
 
-    if (!product) {
+    if (!satellite) {
       return res.status(404).json({ message: "Satellite not found" });
     }
 

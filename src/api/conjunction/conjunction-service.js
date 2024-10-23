@@ -2,8 +2,8 @@ const Conjunction = require("./conjunction");
 
 const getConjunctions = async (req, res) => {
   try {
-    const products = await Conjunction.find({});
-    res.status(200).json(products);
+    const conjunctions = await Conjunction.find({});
+    res.status(200).json(conjunctions);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -12,8 +12,8 @@ const getConjunctions = async (req, res) => {
 const getConjunction = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await Conjunction.findById(id);
-    res.status(200).json(product);
+    const conjunction = await Conjunction.findById(id);
+    res.status(200).json(conjunction);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -21,8 +21,8 @@ const getConjunction = async (req, res) => {
 
 const postConjunction = async (req, res) => {
   try {
-    const product = await Conjunction.create(req.body);
-    res.status(200).json(product);
+    const conjunction = await Conjunction.create(req.body);
+    res.status(200).json(conjunction);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -31,9 +31,9 @@ const postConjunction = async (req, res) => {
 const putConjunction = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await Conjunction.findByIdAndUpdate(id, req.body);
+    const conjunction = await Conjunction.findByIdAndUpdate(id, req.body);
 
-    if (!product) {
+    if (!conjunction) {
       return res.status(404).json({ message: "Conjunction not found" });
     }
 
@@ -49,9 +49,9 @@ const deleteConjunction = async (req, res) => {
     const { id } = req.params;
     console.log(id);
 
-    const product = await Conjunction.findByIdAndDelete(id);
+    const conjunction = await Conjunction.findByIdAndDelete(id);
 
-    if (!product) {
+    if (!conjunction) {
       return res.status(404).json({ message: "Conjunction not found" });
     }
 
